@@ -80,8 +80,8 @@ class BinarySearchTree{
         }
 
         System.out.print(node.data + " ");
-        printPreOrder(node.left);
-        printPreOrder(node.right);   
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);   
    }
 
    
@@ -90,7 +90,12 @@ class BinarySearchTree{
    in-order traversal
    */
    public void inOrderTraversal(Node root){
-      //implement me
+   if (node == null)
+            return;
+ 
+        inOrderTraversal(node.left);
+        System.out.print(node.data + " ");
+        inOrderTraversal(node.right);
    }
    
    
@@ -113,8 +118,21 @@ class BinarySearchTree{
    with a specific value
    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+	if (root == null) { // if tree is empty
+        return null;
+    }
+    if (root.value == value) { // if current node contains the value
+        return root;
+    }
+    TreeNode leftNode = findNode(root.left, value); // search in left subtree
+    if (leftNode != null) { // if found in left subtree
+        return leftNode;
+    }
+    TreeNode rightNode = findNode(root.right, value); // search in right subtree
+    if (rightNode != null) { // if found in right subtree
+        return rightNode;
+    }
+    return null; // if not found in tree           
    }
    
    
