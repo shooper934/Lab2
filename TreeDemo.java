@@ -75,7 +75,13 @@ class BinarySearchTree{
    pre-order traversal
    */
    public void preOrderTraversal(Node root){
-      
+   if (node == null) {
+            return;
+        }
+
+        System.out.print(node.data + " ");
+        printPreOrder(node.left);
+        printPreOrder(node.right);   
    }
 
    
