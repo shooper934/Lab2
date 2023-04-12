@@ -149,7 +149,14 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
+	if (root == null) {
+       return 0;    }
+    Node current = root;
+    while (current.right != null) {
+        // Traverse to the rightmost node, which contains the largest value
+        current = current.right;
+    }
+    return current.value;
    }
    
    
