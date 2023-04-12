@@ -1,3 +1,11 @@
+/**
+ * TreeDemo with helper methods.
+ * <p>
+ * 
+ * @author Spencer Hooper
+ *
+ */
+
 class Node{
    int value;
    Node left, right;
@@ -15,9 +23,11 @@ class BinarySearchTree{
    Node root;
    
    
-   /*
-   recursive insert method
-   */
+   /**
+	 * A recursive method to insert nodes into a BST
+    * @param Node root, int value
+    * @return Node
+	 */
    public Node insert(Node root, int value){
       //base case
       if(root == null){
@@ -36,9 +46,11 @@ class BinarySearchTree{
       return root;
    }
    
-    /*
-   inserts a node into the tree
-   */
+    /**
+	 * An iterative method to insert nodes into a BST
+    * @param int value
+    * 
+	 */
    public void insert(int value){
       //tree is empty
       if(root == null){
@@ -70,9 +82,10 @@ class BinarySearchTree{
       }//closing main if-else 
    }  
    
-   /*
-   pre-order traversal
-   */
+   /**
+	 * preOrderTraversal 
+    * @param Node root
+	 */
    public void preOrderTraversal(Node root){
    if (root == null) {
             return;
@@ -85,9 +98,10 @@ class BinarySearchTree{
 
    
    
-   /*
-   in-order traversal
-   */
+   /**
+	 * inOrderTraversal 
+    * @param Node root
+	 */
    public void inOrderTraversal(Node root){
    if (root == null)
             return;
@@ -99,9 +113,10 @@ class BinarySearchTree{
    
    
    
-   /*
-   post-order traversal
-   */
+   /**
+	 * postOrderTraversal 
+    * @param Node root
+	 */
    public void postOrderTraversal(Node root){
          if (root != null) {
             postOrderTraversal(root.left);
@@ -112,10 +127,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
-   */
+   /**
+	 * A method to find a specific key in a BST 
+    * @param Node root, int key
+    * @return boolean
+	 */
    public boolean find(Node root, int key){
 	if (root == null) {
         return false;
@@ -128,10 +144,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a smallest key
-   */
+   /**
+	 * A method to find the min key in a BST 
+    * @param Node root
+    * @return int
+	 */
    public int getMin(Node root){
    if (root == null) {
         return Integer.MIN_VALUE; // or throw an exception to indicate an empty tree
@@ -144,10 +161,12 @@ class BinarySearchTree{
   
   
   
-   /*
-   a method to find the node in the tree
-   with a largest key
-   */
+   /**
+	 * A method to find the max key in a BST 
+    * @param Node root
+    * @return int
+	 */
+
    public int getMax(Node root){
 	if (root == null) {
        return 0;    }
@@ -161,10 +180,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   this method will not compile until getMax
-   is implemented
-   */
+  /**
+	 * A method to delete a key in a BST
+    * @param Node root, int key
+    * @return Node
+	 */
    public Node delete(Node root, int key){
       
       if(root == null){
